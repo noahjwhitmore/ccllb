@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>League News | Cass County Little League</title>
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter Font for a highly legible, bold UI feel -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased flex flex-col min-h-screen">
+
+    <!-- ==========================================
+         UTILITY BAR (Topmost thin bar)
+    =========================================== -->
+    <div class="bg-[#000A2D] text-slate-300 text-xs py-2 hidden md:block border-b border-[#000A2D]/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+            <div class="flex space-x-6">
+                <a href="#" class="hover:text-white uppercase font-bold tracking-wider transition-colors">League Directory</a>
+                <a href="#" class="hover:text-white uppercase font-bold tracking-wider transition-colors">Sponsors</a>
+                <a href="#" class="hover:text-white uppercase font-bold tracking-wider transition-colors">Volunteer</a>
+            </div>
+            <div class="flex space-x-4">
+                <a href="login.html" class="hover:text-white uppercase font-bold tracking-wider border border-slate-600 px-3 py-1 rounded-sm hover:border-slate-400 transition-colors">Login / Register</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================
+         MAIN HEADER & NAVIGATION
+    =========================================== -->
+    <header class="bg-white border-b-4 border-[#000A2D] sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20 lg:h-24">
+                
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center space-x-4 group lg:flex-1">
+                    <div class="w-14 h-14 lg:w-16 lg:h-16 bg-[#000A2D] border-4 border-[#000A2D] rounded-full flex items-center justify-center shadow-sm group-hover:scale-105 transition-transform shrink-0 relative overflow-hidden">
+                        <span class="text-white font-black text-xl lg:text-2xl tracking-tighter relative z-10">CCLL</span>
+                        <!-- Subtle red accent in logo -->
+                        <div class="absolute bottom-0 left-0 right-0 h-2 bg-[#E31837]"></div>
+                    </div>
+                    <div class="flex flex-col leading-none pt-1">
+                        <span class="font-black text-2xl lg:text-3xl text-[#000A2D] uppercase tracking-tighter">Cass County</span>
+                        <span class="text-[#E31837] font-black text-xs lg:text-sm tracking-widest uppercase mt-1">Little League Baseball</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden lg:flex justify-center space-x-6 xl:space-x-8">
+                    <a href="#" class="text-[#000A2D] hover:text-[#E31837] font-black uppercase tracking-wide py-8 border-b-4 border-transparent hover:border-[#E31837] transition-colors whitespace-nowrap text-sm xl:text-base">About</a>
+                    <a href="#" class="text-[#000A2D] hover:text-[#E31837] font-black uppercase tracking-wide py-8 border-b-4 border-transparent hover:border-[#E31837] transition-colors whitespace-nowrap text-sm xl:text-base">Parents & Players</a>
+                    <a href="#" class="text-[#000A2D] hover:text-[#E31837] font-black uppercase tracking-wide py-8 border-b-4 border-transparent hover:border-[#E31837] transition-colors whitespace-nowrap text-sm xl:text-base">Coaches & Umpires</a>
+                    <a href="#" class="text-[#000A2D] hover:text-[#E31837] font-black uppercase tracking-wide py-8 border-b-4 border-transparent hover:border-[#E31837] transition-colors whitespace-nowrap text-sm xl:text-base">Schedules</a>
+                </nav>
+
+                <!-- Call to Action -->
+                <div class="flex items-center justify-end space-x-4 lg:flex-1">
+                    <a href="#" class="hidden md:block bg-[#E31837] hover:bg-[#B01229] text-white font-black uppercase tracking-widest px-8 py-3 rounded-sm shadow-md transition-all">
+                        Register Now
+                    </a>
+                    <!-- Mobile Menu Button -->
+                    <button id="mobile-menu-button" class="lg:hidden p-2 text-[#000A2D] focus:outline-none">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow pb-24">
+        
+        <!-- ==========================================
+             PAGE HEADER 
+        =========================================== -->
+        <div class="bg-white border-b border-slate-200 pt-8 pb-10">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <!-- Breadcrumbs -->
+                <nav class="flex justify-center text-[11px] font-bold text-slate-400 uppercase tracking-widest mb-6">
+                    <a href="index.html" class="hover:text-[#E31837] transition-colors">Home</a>
+                    <span class="mx-2">/</span>
+                    <span class="text-slate-800">League News</span>
+                </nav>
+
+                <!-- Title Area -->
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-[#000A2D] uppercase tracking-tighter leading-[1.05]">
+                    News & Updates
+                </h1>
+                <p class="mt-4 text-lg text-slate-500 font-medium max-w-2xl mx-auto">
+                    Stay up to date with the latest announcements, rule changes, events, and registration deadlines for Cass County Little League.
+                </p>
+            </div>
+        </div>
+
+        <!-- ==========================================
+             CONTENT FEED & SIDEBAR
+        =========================================== -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16">
+                
+                <!-- NEWS FEED (Left Column) -->
+                <div class="lg:col-span-2 space-y-8">
+                    
+                    <!-- Article Blip 1 -->
+                    <article class="bg-white rounded-sm border-2 border-slate-200 flex flex-col sm:flex-row hover:border-[#000A2D] hover:shadow-md transition-all group overflow-hidden">
+                        <!-- Thumbnail -->
+                        <a href="article.html" class="w-full sm:w-2/5 aspect-video sm:aspect-auto bg-slate-200 relative overflow-hidden shrink-0 block">
+                            <img src="https://images.unsplash.com/photo-1551260462-1052601db5fa?q=80&w=600&auto=format&fit=crop" alt="Baseball equipment" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                            <div class="absolute top-4 left-4 bg-[#E31837] text-white text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-sm shadow-md">
+                                Events
+                            </div>
+                        </a>
+                        <!-- Content -->
+                        <div class="p-6 flex flex-col justify-center flex-grow">
+                            <span class="text-slate-400 font-black text-[10px] uppercase tracking-widest mb-2 block">March 5, 2026</span>
+                            <a href="article.html">
+                                <h2 class="text-2xl font-black text-[#000A2D] uppercase tracking-tight mb-3 leading-tight group-hover:text-[#E31837] transition-colors">Equipment Swap Day Announced</h2>
+                            </a>
+                            <p class="text-slate-600 mb-4 line-clamp-3 font-medium">Bring your gently used cleats, bats, and gloves to the main pavilion this Saturday. Trade up for the new season or donate outgrown gear to younger players in the league.</p>
+                            <a href="article.html" class="text-[#E31837] font-black text-xs uppercase tracking-widest hover:underline mt-auto inline-flex items-center">
+                                Read Full Story <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Article Blip 2 -->
+                    <article class="bg-white rounded-sm border-2 border-slate-200 flex flex-col sm:flex-row hover:border-[#000A2D] hover:shadow-md transition-all group overflow-hidden">
+                        <!-- Thumbnail -->
+                        <a href="article.html" class="w-full sm:w-2/5 aspect-video sm:aspect-auto bg-slate-200 relative overflow-hidden shrink-0 block">
+                            <img src="https://images.unsplash.com/photo-1593341029288-513689c16503?q=80&w=600&auto=format&fit=crop" alt="Baseball Umpire" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                            <div class="absolute top-4 left-4 bg-[#000A2D] text-white text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-sm shadow-md">
+                                Volunteers
+                            </div>
+                        </a>
+                        <!-- Content -->
+                        <div class="p-6 flex flex-col justify-center flex-grow">
+                            <span class="text-slate-400 font-black text-[10px] uppercase tracking-widest mb-2 block">February 28, 2026</span>
+                            <a href="article.html">
+                                <h2 class="text-2xl font-black text-[#000A2D] uppercase tracking-tight mb-3 leading-tight group-hover:text-[#E31837] transition-colors">Umpire Clinic Registration Open</h2>
+                            </a>
+                            <p class="text-slate-600 mb-4 line-clamp-3 font-medium">Calling all parents and older siblings! We are hosting a mandatory clinic for all returning and new umpires next week. Great pay and flexible scheduling for high school students.</p>
+                            <a href="article.html" class="text-[#E31837] font-black text-xs uppercase tracking-widest hover:underline mt-auto inline-flex items-center">
+                                Read Full Story <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Article Blip 3 -->
+                    <article class="bg-white rounded-sm border-2 border-slate-200 flex flex-col sm:flex-row hover:border-[#000A2D] hover:shadow-md transition-all group overflow-hidden">
+                        <!-- Thumbnail -->
+                        <a href="article.html" class="w-full sm:w-2/5 aspect-video sm:aspect-auto bg-[#000A2D] relative overflow-hidden shrink-0 flex items-center justify-center border-b sm:border-b-0 sm:border-r border-slate-200">
+                            <!-- Using a solid color block instead of image to show variety -->
+                            <div class="text-center p-6">
+                                <div class="w-12 h-12 rounded-full border-2 border-[#E31837] text-white flex items-center justify-center mx-auto mb-3">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                                </div>
+                                <span class="text-white font-black uppercase tracking-widest text-xs">Sponsors</span>
+                            </div>
+                        </a>
+                        <!-- Content -->
+                        <div class="p-6 flex flex-col justify-center flex-grow">
+                            <span class="text-slate-400 font-black text-[10px] uppercase tracking-widest mb-2 block">February 15, 2026</span>
+                            <a href="article.html">
+                                <h2 class="text-2xl font-black text-[#000A2D] uppercase tracking-tight mb-3 leading-tight group-hover:text-[#E31837] transition-colors">2026 Sponsorship Opportunities Available</h2>
+                            </a>
+                            <p class="text-slate-600 mb-4 line-clamp-3 font-medium">Local businesses, we need your support! Outfield banner packages and team jersey sponsorships are now open for the Spring season. Secure your spot today.</p>
+                            <a href="article.html" class="text-[#E31837] font-black text-xs uppercase tracking-widest hover:underline mt-auto inline-flex items-center">
+                                Read Full Story <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Article Blip 4 -->
+                    <article class="bg-white rounded-sm border-2 border-slate-200 flex flex-col sm:flex-row hover:border-[#000A2D] hover:shadow-md transition-all group overflow-hidden">
+                        <!-- Thumbnail -->
+                        <a href="article.html" class="w-full sm:w-2/5 aspect-video sm:aspect-auto bg-[#000A2D] relative overflow-hidden shrink-0 flex items-center justify-center border-b sm:border-b-0 sm:border-r border-slate-200">
+                            <div class="text-center p-6">
+                                <div class="w-12 h-12 rounded-full border-2 border-[#E31837] text-white flex items-center justify-center mx-auto mb-3">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                                </div>
+                                <span class="text-white font-black uppercase tracking-widest text-xs">Rules</span>
+                            </div>
+                        </a>
+                        <!-- Content -->
+                        <div class="p-6 flex flex-col justify-center flex-grow">
+                            <span class="text-slate-400 font-black text-[10px] uppercase tracking-widest mb-2 block">February 1, 2026</span>
+                            <a href="article.html">
+                                <h2 class="text-2xl font-black text-[#000A2D] uppercase tracking-tight mb-3 leading-tight group-hover:text-[#E31837] transition-colors">Mandatory Bat Regulations Updated</h2>
+                            </a>
+                            <p class="text-slate-600 mb-4 line-clamp-3 font-medium">Please review the updated USA Bat standard requirements before purchasing new equipment for your players this season. Illegal bats will result in an immediate out.</p>
+                            <a href="article.html" class="text-[#E31837] font-black text-xs uppercase tracking-widest hover:underline mt-auto inline-flex items-center">
+                                Read Full Story <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Pagination -->
+                    <div class="pt-8 flex justify-center">
+                        <nav class="inline-flex rounded-sm shadow-sm" aria-label="Pagination">
+                            <a href="#" class="relative inline-flex items-center px-4 py-2 border border-slate-300 bg-white text-sm font-medium text-slate-500 hover:bg-slate-50 rounded-l-sm transition-colors">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                            </a>
+                            <!-- Current Page -->
+                            <a href="#" aria-current="page" class="z-10 bg-[#000A2D] border-[#000A2D] text-white relative inline-flex items-center px-5 py-2 border text-sm font-black transition-colors">
+                                1
+                            </a>
+                            <a href="#" class="bg-white border-slate-300 text-slate-500 hover:bg-slate-50 relative inline-flex items-center px-5 py-2 border text-sm font-medium transition-colors">
+                                2
+                            </a>
+                            <a href="#" class="bg-white border-slate-300 text-slate-500 hover:bg-slate-50 hidden md:inline-flex relative items-center px-5 py-2 border text-sm font-medium transition-colors">
+                                3
+                            </a>
+                            <span class="relative inline-flex items-center px-4 py-2 border border-slate-300 bg-white text-sm font-medium text-slate-700">
+                                ...
+                            </span>
+                            <a href="#" class="bg-white border-slate-300 text-slate-500 hover:bg-slate-50 relative inline-flex items-center px-5 py-2 border text-sm font-medium transition-colors">
+                                8
+                            </a>
+                            <a href="#" class="relative inline-flex items-center px-4 py-2 border border-slate-300 bg-white text-sm font-medium text-slate-500 hover:bg-slate-50 rounded-r-sm transition-colors">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                            </a>
+                        </nav>
+                    </div>
+
+                </div>
+
+                <!-- SIDEBAR (Filters & Search) -->
+                <aside class="space-y-10">
+                    
+                    <!-- Search Bar -->
+                    <div class="bg-white p-6 rounded-sm border border-slate-200 shadow-sm">
+                        <h3 class="text-xl font-black text-[#000A2D] uppercase tracking-tighter mb-4">Search Updates</h3>
+                        <form class="flex" action="#" method="GET">
+                            <input type="text" placeholder="Keywords..." class="flex-grow bg-slate-50 border border-slate-300 rounded-l-sm px-4 py-2 focus:outline-none focus:ring-1 focus:ring-[#000A2D] font-medium text-sm">
+                            <button type="submit" class="bg-[#000A2D] text-white px-4 py-2 rounded-r-sm hover:bg-[#E31837] transition-colors">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Categories Menu -->
+                    <div class="bg-white p-6 rounded-sm border border-slate-200 shadow-sm">
+                        <h3 class="text-xl font-black text-[#000A2D] uppercase tracking-tighter mb-4 border-b-2 border-slate-200 pb-2">Filter By Topic</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="flex justify-between items-center text-slate-600 hover:text-[#E31837] font-bold transition-colors group px-2 py-1 rounded hover:bg-slate-50">
+                                <span>Registration</span>
+                                <span class="bg-slate-100 text-slate-500 group-hover:bg-red-50 group-hover:text-[#E31837] text-xs px-2 py-0.5 rounded-sm">12</span>
+                            </a></li>
+                            <li><a href="#" class="flex justify-between items-center text-slate-600 hover:text-[#E31837] font-bold transition-colors group px-2 py-1 rounded hover:bg-slate-50">
+                                <span>Events & Clinics</span>
+                                <span class="bg-slate-100 text-slate-500 group-hover:bg-red-50 group-hover:text-[#E31837] text-xs px-2 py-0.5 rounded-sm">8</span>
+                            </a></li>
+                            <li><a href="#" class="flex justify-between items-center text-slate-600 hover:text-[#E31837] font-bold transition-colors group px-2 py-1 rounded hover:bg-slate-50">
+                                <span>Rules & Policies</span>
+                                <span class="bg-slate-100 text-slate-500 group-hover:bg-red-50 group-hover:text-[#E31837] text-xs px-2 py-0.5 rounded-sm">5</span>
+                            </a></li>
+                            <li><a href="#" class="flex justify-between items-center text-slate-600 hover:text-[#E31837] font-bold transition-colors group px-2 py-1 rounded hover:bg-slate-50">
+                                <span>Tournaments</span>
+                                <span class="bg-slate-100 text-slate-500 group-hover:bg-red-50 group-hover:text-[#E31837] text-xs px-2 py-0.5 rounded-sm">14</span>
+                            </a></li>
+                            <li><a href="#" class="flex justify-between items-center text-slate-600 hover:text-[#E31837] font-bold transition-colors group px-2 py-1 rounded hover:bg-slate-50">
+                                <span>Volunteers</span>
+                                <span class="bg-slate-100 text-slate-500 group-hover:bg-red-50 group-hover:text-[#E31837] text-xs px-2 py-0.5 rounded-sm">3</span>
+                            </a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Call to Action Banner (Sidebar) -->
+                    <div class="bg-[#000A2D] rounded-sm p-8 text-center text-white border-t-4 border-[#E31837] shadow-xl relative overflow-hidden group">
+                        <div class="absolute -right-8 -bottom-8 w-32 h-32 bg-white/5 rounded-full group-hover:scale-150 transition-transform duration-700"></div>
+                        <h3 class="font-black text-2xl uppercase tracking-tighter mb-2 relative z-10">Never Miss an Update</h3>
+                        <p class="text-sm text-slate-300 mb-6 font-medium relative z-10">Sign up for our newsletter to get text alerts for rainouts and important deadlines.</p>
+                        <a href="#" class="inline-block w-full bg-[#E31837] hover:bg-[#B01229] text-white font-black uppercase tracking-widest py-3 rounded-sm shadow-md transition-all relative z-10">
+                            Join Mailing List
+                        </a>
+                    </div>
+
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <!-- ==========================================
+         FOOTER
+    =========================================== -->
+    <footer class="bg-white border-t border-slate-200 py-12 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8 border-b-2 border-slate-100 pb-8">
+                
+                <!-- Logo & About -->
+                <div class="md:col-span-1">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-12 h-12 bg-[#000A2D] rounded-full flex items-center justify-center text-white font-black tracking-tighter text-sm border-b-2 border-[#E31837]">CCLL</div>
+                        <span class="font-black text-2xl text-[#000A2D] tracking-tighter uppercase">Cass County</span>
+                    </div>
+                    <p class="text-sm text-slate-600 font-medium">A chartered local league of Little League Baseball, serving the youth of our community.</p>
+                </div>
+
+                <!-- Links 1 -->
+                <div>
+                    <h4 class="text-[#000A2D] font-black mb-4 uppercase tracking-widest text-xs border-b border-slate-200 pb-2">LEAGUE INFO</h4>
+                    <ul class="space-y-3 text-sm font-bold text-slate-500 uppercase tracking-wider text-[11px]">
+                        <li><a href="#" class="hover:text-[#E31837] transition-colors">Board of Directors</a></li>
+                        <li><a href="#" class="hover:text-[#E31837] transition-colors">Bylaws & Constitution</a></li>
+                        <li><a href="#" class="hover:text-[#E31837] transition-colors">Contact Us</a></li>
+                        <li><a href="#" class="hover:text-[#E31837] transition-colors">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <!-- Links 2 -->
+                <div>
+                    <h4 class="text-[#000A2D] font-black mb-4 uppercase tracking-widest text-xs border-b border-slate-200 pb-2">PARENTS</h4>
+                    <ul class="space-y-3 text-sm font-bold text-slate-500 uppercase tracking-wider text-[11px]">
+                        <li><a href="#" class="hover:text-[#E31837] transition-colors">Registration Guide</a></li>
+                        <li><a href="#" class="hover:text-[#E31837] transition-colors">Age Chart Matrix</a></li>
+                        <li><a href="#" class="hover:text-[#E31837] transition-colors">Bat Rules</a></li>
+                        <li><a href="#" class="hover:text-[#E31837] transition-colors">Weather Policy</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="text-[#000A2D] font-black mb-4 uppercase tracking-widest text-xs border-b border-slate-200 pb-2">FIELDS</h4>
+                    <address class="not-italic text-sm space-y-2 text-slate-600 font-medium">
+                        <p class="font-bold text-[#000A2D]">Cass County Community Park</p>
+                        <p>1234 Baseball Lane<br>Plattsmouth, NE 68048</p>
+                        <a href="#" class="text-[#E31837] font-black uppercase tracking-widest text-[10px] hover:underline block mt-2">GET DIRECTIONS &rarr;</a>
+                    </address>
+                </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row justify-between items-center text-[10px] font-bold text-slate-400 uppercase tracking-widest">
+                <p>&copy; <script>document.write(new Date().getFullYear())</script> CASS COUNTY LITTLE LEAGUE BASEBALL. ALL RIGHTS RESERVED.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-[#000A2D] transition-colors">PRIVACY POLICY</a>
+                    <a href="#" class="hover:text-[#000A2D] transition-colors">TERMS OF SERVICE</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        const btn = document.getElementById('mobile-menu-button');
+        const menu = document.getElementById('mobile-menu');
+
+        if(btn && menu) {
+            btn.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+            });
+        }
+    </script>
+</body>
+</html>
