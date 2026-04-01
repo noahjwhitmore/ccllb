@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cass County Little League Baseball | Official Site</title>
+    <title>DESIGN PROPOSAL | Cass County Little League Baseball</title>
     <!-- Tailwind CSS for styling -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Inter Font for a highly legible, bold UI feel -->
@@ -24,7 +24,6 @@
             overflow: hidden;
             display: flex;
             align-items: center;
-            /* Adds a slight fade to the edges of the scrolling area */
             -webkit-mask-image: linear-gradient(to right, transparent, black 2%, black 98%, transparent);
             mask-image: linear-gradient(to right, transparent, black 2%, black 98%, transparent);
         }
@@ -37,9 +36,33 @@
         .ticker-track:hover {
             animation-play-state: paused;
         }
+
+        /* Proposal Banner Animation */
+        @keyframes pulse-subtle {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.85; }
+        }
+        .proposal-pulse { animation: pulse-subtle 3s infinite ease-in-out; }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased flex flex-col min-h-screen">
+
+    <!-- ==========================================
+         STICKY DESIGN PROPOSAL HEADER
+    =========================================== -->
+    <div class="bg-amber-400 text-[#000A2D] py-2 px-4 border-b border-amber-500 sticky top-0 z-[70] shadow-sm">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center text-center sm:text-left gap-2">
+            <div class="flex items-center space-x-2">
+                <div class="bg-[#000A2D] text-white text-[10px] font-black px-2 py-0.5 rounded uppercase tracking-tighter proposal-pulse">Proposal</div>
+                <p class="text-xs font-black uppercase tracking-widest">
+                    Design Preview <span class="hidden sm:inline">|</span> <span class="text-[#000A2D]/70 font-bold">Concept Only</span>
+                </p>
+            </div>
+            <div class="text-[11px] font-bold uppercase tracking-wider">
+                Proposed by <a href="https://noahwhitmore.com" target="_blank" class="underline hover:text-white transition-colors">Noah Whitmore</a>
+            </div>
+        </div>
+    </div>
 
     <!-- ==========================================
          UTILITY BAR (Topmost thin bar)
@@ -58,9 +81,9 @@
     </div>
 
     <!-- ==========================================
-         MAIN HEADER & NAVIGATION
+         MAIN HEADER & NAVIGATION (Adjusted sticky top)
     =========================================== -->
-    <header class="bg-white border-b-4 border-[#000A2D] sticky top-0 z-50 shadow-md">
+    <header class="bg-white border-b-4 border-[#000A2D] sticky top-[68px] sm:top-[36px] md:top-[36px] z-50 shadow-md">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20 lg:h-24">
                 
@@ -68,7 +91,6 @@
                 <a href="#" class="flex items-center space-x-4 group lg:flex-1">
                     <div class="w-14 h-14 lg:w-16 lg:h-16 bg-[#000A2D] border-4 border-[#000A2D] rounded-full flex items-center justify-center shadow-sm group-hover:scale-105 transition-transform shrink-0 relative overflow-hidden">
                         <span class="text-white font-black text-xl lg:text-2xl tracking-tighter relative z-10">CCLL</span>
-                        <!-- Subltle red accent in logo -->
                         <div class="absolute bottom-0 left-0 right-0 h-2 bg-[#E31837]"></div>
                     </div>
                     <div class="flex flex-col leading-none pt-1">
@@ -87,10 +109,9 @@
 
                 <!-- Call to Action -->
                 <div class="flex items-center justify-end space-x-4 lg:flex-1">
-                    <a href="#" class="hidden md:block bg-[#E31837] hover:bg-[#B01229] text-white font-black uppercase tracking-widest px-8 py-3 rounded-sm shadow-md transition-all">
+                    <a href="#" class="hidden md:block bg-[#E31837] hover:bg-[#B01229] text-white font-black uppercase tracking-widest px-8 py-3 rounded-sm shadow-md transition-all text-xs lg:text-sm">
                         Register Now
                     </a>
-                    <!-- Mobile Menu Button -->
                     <button id="mobile-menu-button" class="lg:hidden p-2 text-[#000A2D] focus:outline-none">
                         <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
                     </button>
@@ -98,7 +119,6 @@
             </div>
         </div>
 
-        <!-- Mobile Navigation Panel -->
         <div id="mobile-menu" class="hidden lg:hidden bg-[#000A2D] text-white border-t border-[#000A2D]">
             <div class="px-4 py-4 space-y-1">
                 <a href="#" class="block px-4 py-3 font-black text-lg uppercase tracking-wide border-b border-slate-800 hover:text-[#E31837]">About</a>
@@ -110,23 +130,17 @@
         </div>
     </header>
 
-    <!-- ==========================================
-         SCOREBOARD TICKER
-    =========================================== -->
+    <!-- SCOREBOARD TICKER -->
     <div class="bg-slate-200 border-b border-slate-300 shadow-inner z-30 relative">
         <div class="max-w-7xl mx-auto flex items-stretch h-16 md:h-20">
-            <!-- Label Box -->
             <div class="bg-[#000A2D] text-white font-black uppercase tracking-widest flex items-center px-4 md:px-6 text-sm md:text-base shrink-0 relative z-10 shadow-[4px_0_10px_rgba(0,0,0,0.1)]">
                 RECENT & UPCOMING
             </div>
             
-            <!-- Scrolling Games container (Marquee style) -->
             <div class="flex-1 ticker-wrap pl-2 md:pl-4">
                 <div class="ticker-track py-2 pr-4">
-                    
-                    <!-- ==== SET 1 ==== -->
-                    <!-- Game Card 1 (Recent) -->
-                    <div class="bg-white border border-slate-300 rounded-sm px-5 py-2 flex flex-col justify-center min-w-[200px] shrink-0 shadow-sm cursor-default">
+                    <!-- Game Card 1 -->
+                    <div class="bg-white border border-slate-300 rounded-sm px-5 py-2 flex flex-col justify-center min-w-[200px] shrink-0 shadow-sm">
                         <div class="flex justify-between font-bold mb-1 text-sm">
                             <span class="text-[#000A2D]">Cubs (12U)</span>
                             <span class="text-[#000A2D]">5</span>
@@ -137,9 +151,8 @@
                         </div>
                         <div class="text-xs text-[#E31837] font-black uppercase mt-1.5 tracking-wider">Final</div>
                     </div>
-
-                    <!-- Game Card 2 (Recent) -->
-                    <div class="bg-white border border-slate-300 rounded-sm px-5 py-2 flex flex-col justify-center min-w-[200px] shrink-0 shadow-sm cursor-default">
+                    <!-- Game Card 2 -->
+                    <div class="bg-white border border-slate-300 rounded-sm px-5 py-2 flex flex-col justify-center min-w-[200px] shrink-0 shadow-sm">
                         <div class="flex justify-between font-bold mb-1 text-sm">
                             <span class="text-[#000A2D]">Mets (10U)</span>
                             <span class="text-[#000A2D]">1</span>
@@ -150,9 +163,8 @@
                         </div>
                         <div class="text-xs text-[#E31837] font-black uppercase mt-1.5 tracking-wider">Final</div>
                     </div>
-
-                    <!-- Game Card 3 (Upcoming) -->
-                    <div class="bg-white border border-slate-300 rounded-sm px-5 py-2 flex flex-col justify-center min-w-[200px] shrink-0 shadow-sm cursor-default">
+                    <!-- Game Card 3 -->
+                    <div class="bg-white border border-slate-300 rounded-sm px-5 py-2 flex flex-col justify-center min-w-[200px] shrink-0 shadow-sm">
                         <div class="flex justify-between font-bold mb-1 text-sm">
                             <span class="text-[#000A2D]">Yankees (8U)</span>
                             <span class="text-slate-400">-</span>
@@ -163,23 +175,8 @@
                         </div>
                         <div class="text-xs text-slate-500 font-bold uppercase mt-1.5 tracking-wider">Today 6:00 PM</div>
                     </div>
-
-                    <!-- Game Card 4 (Upcoming) -->
-                    <div class="bg-white border border-slate-300 rounded-sm px-5 py-2 flex flex-col justify-center min-w-[200px] shrink-0 shadow-sm cursor-default">
-                        <div class="flex justify-between font-bold mb-1 text-sm">
-                            <span class="text-[#000A2D]">Dodgers (14U)</span>
-                            <span class="text-slate-400">-</span>
-                        </div>
-                        <div class="flex justify-between font-bold text-slate-500 text-sm">
-                            <span>Giants (14U)</span>
-                            <span>-</span>
-                        </div>
-                        <div class="text-xs text-slate-500 font-bold uppercase mt-1.5 tracking-wider">Tomorrow 7:30 PM</div>
-                    </div>
-
-                    <!-- ==== SET 2 (Duplicate for infinite scroll loop) ==== -->
-                    <!-- Game Card 1 (Recent) -->
-                    <div class="bg-white border border-slate-300 rounded-sm px-5 py-2 flex flex-col justify-center min-w-[200px] shrink-0 shadow-sm cursor-default">
+                    <!-- Repeated for loop -->
+                    <div class="bg-white border border-slate-300 rounded-sm px-5 py-2 flex flex-col justify-center min-w-[200px] shrink-0 shadow-sm">
                         <div class="flex justify-between font-bold mb-1 text-sm">
                             <span class="text-[#000A2D]">Cubs (12U)</span>
                             <span class="text-[#000A2D]">5</span>
@@ -189,45 +186,6 @@
                             <span>3</span>
                         </div>
                         <div class="text-xs text-[#E31837] font-black uppercase mt-1.5 tracking-wider">Final</div>
-                    </div>
-
-                    <!-- Game Card 2 (Recent) -->
-                    <div class="bg-white border border-slate-300 rounded-sm px-5 py-2 flex flex-col justify-center min-w-[200px] shrink-0 shadow-sm cursor-default">
-                        <div class="flex justify-between font-bold mb-1 text-sm">
-                            <span class="text-[#000A2D]">Mets (10U)</span>
-                            <span class="text-[#000A2D]">1</span>
-                        </div>
-                        <div class="flex justify-between font-bold text-slate-500 text-sm">
-                            <span>Phillies (10U)</span>
-                            <span>2</span>
-                        </div>
-                        <div class="text-xs text-[#E31837] font-black uppercase mt-1.5 tracking-wider">Final</div>
-                    </div>
-
-                    <!-- Game Card 3 (Upcoming) -->
-                    <div class="bg-white border border-slate-300 rounded-sm px-5 py-2 flex flex-col justify-center min-w-[200px] shrink-0 shadow-sm cursor-default">
-                        <div class="flex justify-between font-bold mb-1 text-sm">
-                            <span class="text-[#000A2D]">Yankees (8U)</span>
-                            <span class="text-slate-400">-</span>
-                        </div>
-                        <div class="flex justify-between font-bold text-slate-500 text-sm">
-                            <span>Red Sox (8U)</span>
-                            <span>-</span>
-                        </div>
-                        <div class="text-xs text-slate-500 font-bold uppercase mt-1.5 tracking-wider">Today 6:00 PM</div>
-                    </div>
-
-                    <!-- Game Card 4 (Upcoming) -->
-                    <div class="bg-white border border-slate-300 rounded-sm px-5 py-2 flex flex-col justify-center min-w-[200px] shrink-0 shadow-sm cursor-default">
-                        <div class="flex justify-between font-bold mb-1 text-sm">
-                            <span class="text-[#000A2D]">Dodgers (14U)</span>
-                            <span class="text-slate-400">-</span>
-                        </div>
-                        <div class="flex justify-between font-bold text-slate-500 text-sm">
-                            <span>Giants (14U)</span>
-                            <span>-</span>
-                        </div>
-                        <div class="text-xs text-slate-500 font-bold uppercase mt-1.5 tracking-wider">Tomorrow 7:30 PM</div>
                     </div>
                 </div>
             </div>
@@ -238,9 +196,7 @@
         </div>
     </div>
 
-    <!-- ==========================================
-         FIELD STATUS ALERT BAR
-    =========================================== -->
+    <!-- FIELD STATUS ALERT BAR -->
     <div class="bg-emerald-600 border-b-4 border-emerald-800 text-white px-4 py-2 text-center text-xs md:text-sm font-black uppercase tracking-widest shadow-md">
         <span class="flex items-center justify-center">
             <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
@@ -249,13 +205,9 @@
     </div>
 
     <main class="flex-grow">
-        <!-- ==========================================
-             HERO SECTION (Bold, Collegiate with Real Image)
-        =========================================== -->
+        <!-- HERO SECTION -->
         <section class="relative overflow-hidden py-16 md:py-24 lg:py-32 border-b-8 border-[#E31837] bg-[url('https://images.unsplash.com/photo-1508344928928-7165b67de128?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center">
-            <!-- Navy Overlay for text readability -->
             <div class="absolute inset-0 bg-[#000A2D]/85 z-0"></div>
-            
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
                 <span class="inline-block bg-[#E31837] text-white font-black px-4 py-1 rounded-sm text-sm uppercase tracking-widest mb-6 shadow-md">
                     Spring 2026 Season
@@ -277,9 +229,7 @@
             </div>
         </section>
 
-        <!-- ==========================================
-             QUICK ACCESS GRID (Sharper, blocky cards)
-        =========================================== -->
+        <!-- QUICK ACCESS GRID -->
         <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-10 relative z-20">
             <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
                 <!-- Card 1 -->
@@ -320,19 +270,14 @@
             </div>
         </section>
 
-        <!-- ==========================================
-             COMMUNITY FEED & EVENTS 
-        =========================================== -->
+        <!-- COMMUNITY FEED & EVENTS -->
         <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
-                
-                <!-- Left: Community Announcements -->
                 <div class="lg:col-span-2">
                     <div class="flex items-end justify-between border-b-4 border-[#000A2D] pb-2 mb-8">
                         <h2 class="text-3xl font-black text-[#000A2D] uppercase tracking-tighter">LEAGUE NEWS</h2>
                         <a href="#" class="text-[#E31837] font-bold uppercase tracking-widest text-sm hover:underline">VIEW ALL &rarr;</a>
                     </div>
-                    
                     <div class="space-y-6">
                         <!-- Post 1 -->
                         <article class="bg-white p-6 rounded-sm border-2 border-slate-200 flex flex-col sm:flex-row gap-6 hover:border-[#000A2D] transition-colors group">
@@ -346,23 +291,9 @@
                                 <a href="#" class="text-[#E31837] font-black text-xs uppercase tracking-widest hover:underline">READ FULL STORY</a>
                             </div>
                         </article>
-
-                        <!-- Post 2 -->
-                        <article class="bg-white p-6 rounded-sm border-2 border-slate-200 flex flex-col sm:flex-row gap-6 hover:border-[#000A2D] transition-colors group">
-                            <div class="w-full sm:w-1/3 aspect-[4/3] bg-slate-200 rounded-sm overflow-hidden shrink-0 flex items-center justify-center border border-slate-300 relative">
-                                <img src="https://images.unsplash.com/photo-1593341029288-513689c16503?q=80&w=600&auto=format&fit=crop" alt="Baseball umpire" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                            </div>
-                            <div class="flex flex-col justify-center">
-                                <span class="text-slate-500 font-black text-[10px] uppercase tracking-widest mb-2 block">FEBRUARY 28, 2026</span>
-                                <h3 class="text-xl font-black text-[#000A2D] uppercase tracking-tight mb-2 leading-tight group-hover:text-[#E31837] transition-colors">UMPIRE CLINIC REGISTRATION OPEN</h3>
-                                <p class="text-slate-600 mb-4 line-clamp-2 font-medium">Calling all parents and older siblings! We are hosting a mandatory clinic for all returning and new umpires next week.</p>
-                                <a href="#" class="text-[#E31837] font-black text-xs uppercase tracking-widest hover:underline">READ FULL STORY</a>
-                            </div>
-                        </article>
                     </div>
                 </div>
 
-                <!-- Right: Upcoming Events -->
                 <div class="space-y-8">
                     <div class="bg-slate-100 border-t-8 border-[#000A2D] rounded-sm p-6 lg:p-8 text-[#000A2D] shadow-sm border border-slate-200">
                         <h2 class="text-2xl font-black uppercase tracking-tighter mb-6 border-b-2 border-slate-300 pb-2">UPCOMING EVENTS</h2>
@@ -377,111 +308,66 @@
                                     <p class="text-slate-600 text-sm mt-1 font-bold uppercase text-[10px] tracking-wider">COACHES ONLY. MAIN PAVILION.</p>
                                 </div>
                             </li>
-                            <li class="flex gap-4 items-start">
-                                <div class="bg-[#000A2D] rounded-sm p-2 text-center w-14 shrink-0 border-b-4 border-[#E31837]">
-                                    <span class="block text-slate-300 text-[10px] font-black uppercase tracking-widest">APR</span>
-                                    <span class="block text-white text-xl font-black leading-none mt-1">05</span>
-                                </div>
-                                <div>
-                                    <h4 class="font-black text-lg uppercase tracking-tight leading-tight text-[#000A2D]">FIELD PREP DAY</h4>
-                                    <p class="text-slate-600 text-sm mt-1 font-bold uppercase text-[10px] tracking-wider">VOLUNTEERS NEEDED TO RAKE FIELDS.</p>
-                                </div>
-                            </li>
-                            <li class="flex gap-4 items-start">
-                                <div class="bg-[#000A2D] rounded-sm p-2 text-center w-14 shrink-0 border-b-4 border-[#E31837]">
-                                    <span class="block text-slate-300 text-[10px] font-black uppercase tracking-widest">MAY</span>
-                                    <span class="block text-white text-xl font-black leading-none mt-1">02</span>
-                                </div>
-                                <div>
-                                    <h4 class="font-black text-lg uppercase tracking-tight leading-tight text-[#000A2D]">OPENING CEREMONIES</h4>
-                                    <p class="text-slate-600 text-sm mt-1 font-bold uppercase text-[10px] tracking-wider">ALL TEAMS REPORT AT 9:00 AM.</p>
-                                </div>
-                            </li>
                         </ul>
-                        <div class="mt-8 pt-6 border-t-2 border-slate-300">
-                            <a href="#" class="block w-full text-center bg-[#000A2D] hover:bg-[#001533] text-white font-black uppercase tracking-widest py-3 rounded-sm transition-colors text-sm">
-                                FULL CALENDAR
-                            </a>
-                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ==========================================
-             CALL TO ACTION (Solid, Athletic Block)
-        =========================================== -->
+        <!-- CALL TO ACTION -->
         <section class="bg-[#000A2D] py-16 text-center px-4 border-y-8 border-[#E31837]">
             <div class="max-w-3xl mx-auto">
                 <h2 class="text-3xl md:text-5xl font-black text-white uppercase tracking-tighter mb-6">WE CAN'T DO IT WITHOUT YOU.</h2>
-                <p class="text-slate-300 text-lg mb-10 font-medium">Cass County Little League Baseball is 100% volunteer run. Whether you want to coach a team, sponsor a banner, or help in the concession stand, we need your help.</p>
+                <p class="text-slate-300 text-lg mb-10 font-medium">Cass County Little League Baseball is 100% volunteer run. Join the community and make a difference.</p>
                 <div class="flex flex-col sm:flex-row justify-center gap-4">
                     <a href="#" class="bg-[#E31837] text-white font-black uppercase tracking-widest px-10 py-4 rounded-sm shadow-lg hover:bg-[#B01229] transition-all text-sm md:text-base">
                         BECOME A SPONSOR
                     </a>
-                    <a href="#" class="bg-transparent text-white font-black uppercase tracking-widest px-10 py-4 rounded-sm border-2 border-slate-400 hover:border-white transition-all text-sm md:text-base">
-                        VOLUNTEER INFO
-                    </a>
                 </div>
             </div>
         </section>
-
     </main>
 
-    <!-- ==========================================
-         FOOTER
-    =========================================== -->
+    <!-- FOOTER -->
     <footer class="bg-white border-t border-slate-200 py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8 border-b-2 border-slate-100 pb-8">
-                
-                <!-- Logo & About -->
                 <div class="md:col-span-1">
                     <div class="flex items-center space-x-3 mb-4">
                         <div class="w-12 h-12 bg-[#000A2D] rounded-full flex items-center justify-center text-white font-black tracking-tighter text-sm border-b-2 border-[#E31837]">CCLL</div>
                         <span class="font-black text-2xl text-[#000A2D] tracking-tighter uppercase">Cass County</span>
                     </div>
-                    <p class="text-sm text-slate-600 font-medium">A chartered local league of Little League Baseball, serving the youth of our community.</p>
+                    <p class="text-sm text-slate-600 font-medium">A chartered local league of Little League Baseball.</p>
                 </div>
 
-                <!-- Links 1 -->
                 <div>
                     <h4 class="text-[#000A2D] font-black mb-4 uppercase tracking-widest text-xs border-b border-slate-200 pb-2">LEAGUE INFO</h4>
                     <ul class="space-y-3 text-sm font-bold text-slate-500 uppercase tracking-wider text-[11px]">
-                        <li><a href="#" class="hover:text-[#E31837] transition-colors">Board of Directors</a></li>
-                        <li><a href="#" class="hover:text-[#E31837] transition-colors">Bylaws & Constitution</a></li>
-                        <li><a href="#" class="hover:text-[#E31837] transition-colors">Contact Us</a></li>
-                        <li><a href="#" class="hover:text-[#E31837] transition-colors">FAQ</a></li>
+                        <li><a href="#" class="hover:text-[#E31837]">Board of Directors</a></li>
+                        <li><a href="#" class="hover:text-[#E31837]">Contact Us</a></li>
                     </ul>
                 </div>
 
-                <!-- Links 2 -->
                 <div>
-                    <h4 class="text-[#000A2D] font-black mb-4 uppercase tracking-widest text-xs border-b border-slate-200 pb-2">PARENTS</h4>
-                    <ul class="space-y-3 text-sm font-bold text-slate-500 uppercase tracking-wider text-[11px]">
-                        <li><a href="#" class="hover:text-[#E31837] transition-colors">Registration Guide</a></li>
-                        <li><a href="#" class="hover:text-[#E31837] transition-colors">Age Chart Matrix</a></li>
-                        <li><a href="#" class="hover:text-[#E31837] transition-colors">Bat Rules</a></li>
-                        <li><a href="#" class="hover:text-[#E31837] transition-colors">Weather Policy</a></li>
-                    </ul>
+                    <h4 class="text-[#000A2D] font-black mb-4 uppercase tracking-widest text-xs border-b border-slate-200 pb-2">DESIGN PROPOSAL</h4>
+                    <p class="text-[11px] font-bold text-slate-400 uppercase leading-relaxed mb-2">Developed By:</p>
+                    <a href="https://noahwhitmore.com" target="_blank" class="text-[#E31837] font-black text-sm uppercase tracking-widest hover:underline block">Noah Whitmore</a>
+                    <p class="text-[10px] text-slate-500 mt-2 font-medium">Visual Concept & UX Mockup</p>
                 </div>
 
-                <!-- Contact -->
                 <div>
                     <h4 class="text-[#000A2D] font-black mb-4 uppercase tracking-widest text-xs border-b border-slate-200 pb-2">FIELDS</h4>
-                    <address class="not-italic text-sm space-y-2 text-slate-600 font-medium">
+                    <address class="not-italic text-sm space-y-2 text-slate-600 font-medium text-[11px]">
                         <p class="font-bold text-[#000A2D]">Cass County Community Park</p>
-                        <p>1234 Baseball Lane<br>Plattsmouth, NE 68048</p>
-                        <a href="#" class="text-[#E31837] font-black uppercase tracking-widest text-[10px] hover:underline block mt-2">GET DIRECTIONS &rarr;</a>
+                        <p>Plattsmouth, NE 68048</p>
                     </address>
                 </div>
             </div>
 
             <div class="flex flex-col md:flex-row justify-between items-center text-[10px] font-bold text-slate-400 uppercase tracking-widest">
-                <p>&copy; <script>document.write(new Date().getFullYear())</script> CASS COUNTY LITTLE LEAGUE BASEBALL. ALL RIGHTS RESERVED.</p>
+                <p>&copy; 2026 CASS COUNTY LITTLE LEAGUE. DESIGN PROPOSAL BY <a href="https://noahwhitmore.com" target="_blank" class="text-slate-600 hover:text-[#E31837] transition-colors">NOAH WHITMORE</a>.</p>
                 <div class="flex space-x-6 mt-4 md:mt-0">
-                    <a href="#" class="hover:text-[#000A2D] transition-colors">PRIVACY POLICY</a>
-                    <a href="#" class="hover:text-[#000A2D] transition-colors">TERMS OF SERVICE</a>
+                    <a href="#" class="hover:text-[#000A2D]">PROPOSAL TERMS</a>
                 </div>
             </div>
         </div>
